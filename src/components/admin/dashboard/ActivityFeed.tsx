@@ -3,6 +3,7 @@ import {
   Clock, ChevronRight, UserPlus, IndianRupee, AlertTriangle,
   CheckCircle2, Database, ClipboardList, CreditCard,
 } from "lucide-react";
+
 import { SkeletonListItem } from "../../common/Skeleton";
 
 const ACTIVITY_ICON: Record<string, { icon: any; bg: string; text: string }> = {
