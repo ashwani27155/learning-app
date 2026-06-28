@@ -1,0 +1,373 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  /* Remove browser number-input spinners globally */
+  input[type="number"] { -moz-appearance: textfield; }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  body {
+    font-family: "Inter", "Mukta", sans-serif;
+    background-color: #f5f3ff;
+    color: #1a1a2e;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  }
+  .font-marathi {
+    font-family: "Mukta", sans-serif;
+    line-height: 1.85;
+  }
+}
+
+@layer components {
+
+  /* ── Card Elevation Levels ───────────────────────────── */
+  .card-flat {
+    @apply bg-white rounded-2xl border border-gray-100;
+  }
+  .card {
+    @apply bg-white rounded-2xl border border-primary-100 shadow-purple-sm overflow-hidden;
+  }
+  .card-hover {
+    @apply card transition-all duration-200 hover:shadow-purple-md hover:-translate-y-0.5 cursor-pointer;
+  }
+  .card-float {
+    @apply bg-white rounded-2xl border border-primary-100 shadow-purple-lg overflow-hidden;
+  }
+
+  /* ── Buttons ────────────────────────────────────────── */
+  .btn-primary {
+    @apply bg-primary-600 text-white font-semibold rounded-xl
+           hover:bg-primary-700 active:bg-primary-800
+           shadow-purple-sm hover:shadow-purple-md
+           transition-all duration-150 inline-flex items-center gap-2
+           disabled:opacity-50 disabled:cursor-not-allowed
+           px-5 py-2.5 text-sm;
+  }
+  .btn-primary-sm { @apply btn-primary px-3 py-1.5 text-xs; }
+  .btn-primary-lg { @apply btn-primary px-7 py-3 text-base; }
+
+  .btn-royal {
+    @apply bg-royal text-white font-semibold px-5 py-2.5 rounded-xl text-sm
+           hover:bg-royal-dark transition-all duration-150 inline-flex items-center gap-2 shadow-royal-glow;
+  }
+  .btn-secondary {
+    @apply bg-accent-500 text-white font-semibold px-5 py-2.5 rounded-xl text-sm
+           hover:bg-accent-600 transition-all duration-150 inline-flex items-center gap-2 shadow-sm;
+  }
+  .btn-outline {
+    @apply border-2 border-primary-600 text-primary-700 font-semibold px-5 py-2.5 rounded-xl text-sm
+           hover:bg-primary-50 transition-all duration-150 inline-flex items-center gap-2;
+  }
+  .btn-ghost {
+    @apply text-gray-600 font-medium px-4 py-2 rounded-xl text-sm
+           hover:bg-primary-50 hover:text-primary-700 transition-all duration-150 inline-flex items-center gap-2;
+  }
+  .btn-dark {
+    @apply bg-dark-800 text-white font-semibold px-5 py-2.5 rounded-xl text-sm
+           hover:bg-dark-900 transition-all duration-150 inline-flex items-center gap-2;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white font-semibold px-5 py-2.5 rounded-xl text-sm
+           hover:bg-red-700 transition-all duration-150 inline-flex items-center gap-2;
+  }
+
+  /* ── Badges ─────────────────────────────────────────── */
+  .badge         { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold; }
+  .badge-primary { @apply badge bg-primary-100 text-primary-700; }
+  .badge-royal   { @apply badge bg-royal-light text-royal-dark; }
+  .badge-gold    { @apply badge bg-accent-100 text-accent-700; }
+  .badge-success { @apply badge bg-emerald-100 text-emerald-700; }
+  .badge-warning { @apply badge bg-amber-100 text-amber-700; }
+  .badge-error   { @apply badge bg-red-100 text-red-700; }
+  .badge-info    { @apply badge bg-violet-100 text-violet-700; }
+  .badge-purple  { @apply badge bg-primary-100 text-primary-700; }
+  .badge-dark    { @apply badge bg-dark-800 text-primary-200; }
+
+  /* ── Form inputs ─────────────────────────────────────── */
+  .input-field {
+    @apply w-full px-4 py-2.5 border border-primary-200 rounded-xl text-sm bg-white
+           focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent
+           placeholder:text-gray-400 transition-all;
+  }
+
+  /* ── Sidebar links ───────────────────────────────────── */
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium
+           text-primary-200 hover:bg-white/10 hover:text-white
+           transition-all duration-150 cursor-pointer;
+  }
+  .sidebar-link.active {
+    @apply bg-white/20 text-white font-semibold;
+  }
+  .sidebar-section-label {
+    @apply text-primary-300 text-[10px] font-bold uppercase tracking-widest px-2 mb-1.5;
+  }
+
+  /* ── Page headers ────────────────────────────────────── */
+  .page-header   { @apply mb-5 md:mb-6; animation: fadeIn 0.35s ease-out; }
+  .page-title    { @apply text-xl md:text-2xl font-bold text-gray-900; font-family: "Plus Jakarta Sans", "Inter", sans-serif; }
+  .page-subtitle { @apply text-sm text-gray-500 mt-1; }
+  .section-title    { @apply text-2xl md:text-3xl font-bold text-gray-900; font-family: "Plus Jakarta Sans", "Inter", sans-serif; }
+  .section-subtitle { @apply text-base md:text-lg text-gray-500 mt-2; }
+
+  /* ── Card anatomy helpers ─────────────────────────────── */
+  .card-header {
+    @apply flex items-center justify-between px-5 py-4 border-b border-gray-100;
+  }
+  .card-body   { @apply p-5; }
+  .card-footer {
+    @apply flex items-center gap-3 px-5 py-4 border-t border-gray-100 bg-gray-50;
+  }
+
+  /* ── Stat card ───────────────────────────────────────── */
+  .stat-card { @apply card p-4 md:p-5 flex items-center gap-4; }
+
+  /* ── Skeleton loader ─────────────────────────────────── */
+  .skeleton {
+    @apply bg-gray-200 rounded-xl animate-pulse;
+  }
+  .skeleton-text   { @apply skeleton h-4 w-full mb-2 last:mb-0; }
+  .skeleton-title  { @apply skeleton h-6 w-2/3 mb-3; }
+  .skeleton-circle { @apply skeleton rounded-full; }
+
+  /* ── Empty state ─────────────────────────────────────── */
+  .empty-state {
+    @apply flex flex-col items-center justify-center py-14 px-6 text-center;
+  }
+  .empty-state-icon  { @apply text-5xl mb-4 opacity-70; }
+  .empty-state-title { @apply text-base font-semibold text-gray-600 mb-1; }
+  .empty-state-desc  { @apply text-sm text-gray-400 mb-5; }
+
+  /* ── Bottom nav item (mobile) ────────────────────────── */
+  .bottom-nav-item {
+    @apply flex-1 flex flex-col items-center justify-center gap-0.5
+           py-2 text-gray-400 hover:text-primary-600 transition-all relative;
+  }
+  .bottom-nav-item.active {
+    @apply text-primary-600;
+  }
+
+  /* ── Divider with label ──────────────────────────────── */
+  .pp-divider {
+    @apply h-1 w-16 rounded-full bg-gradient-to-r from-primary-600 to-accent-500;
+  }
+
+  /* ── Table ───────────────────────────────────────────── */
+  .table-container { @apply overflow-x-auto -mx-1; }
+  .data-table      { @apply w-full text-sm; }
+  .data-table thead tr { @apply bg-gray-50 border-b border-gray-100; }
+  .data-table th   { @apply px-3 py-3 text-left text-xs font-semibold text-gray-500 uppercase whitespace-nowrap; }
+  .data-table td   { @apply px-3 py-3; }
+  .data-table tbody tr { @apply border-b border-gray-50 hover:bg-primary-50 transition-colors; }
+
+  /* ── Scrollbar ───────────────────────────────────────── */
+  ::-webkit-scrollbar       { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #f5f3ff; }
+  ::-webkit-scrollbar-thumb { background: #c4b5fd; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #7c3aed; }
+
+  /* ── TipTap Editor ───────────────────────────────────── */
+  .tiptap-editor .ProseMirror {
+    @apply min-h-[120px] p-3 focus:outline-none;
+  }
+  .tiptap-editor .ProseMirror p { @apply mb-2; }
+  .tiptap-editor .ProseMirror h1 { @apply text-2xl font-bold mb-3; font-family: "Plus Jakarta Sans", "Inter", sans-serif; }
+  .tiptap-editor .ProseMirror h2 { @apply text-xl font-bold mb-2; font-family: "Plus Jakarta Sans", "Inter", sans-serif; }
+  .tiptap-editor .ProseMirror h3 { @apply text-lg font-semibold mb-2; font-family: "Plus Jakarta Sans", "Inter", sans-serif; }
+  .tiptap-editor .ProseMirror ul { @apply list-disc pl-5 mb-2; }
+  .tiptap-editor .ProseMirror ol { @apply list-decimal pl-5 mb-2; }
+  .tiptap-editor .ProseMirror strong { @apply font-semibold; }
+  .tiptap-editor .ProseMirror em { @apply italic; }
+  .tiptap-editor .ProseMirror code {
+    @apply bg-primary-50 text-primary-700 px-1 py-0.5 rounded text-sm font-mono;
+  }
+  .tiptap-editor .ProseMirror blockquote {
+    @apply border-l-4 border-primary-300 pl-4 text-gray-600 italic my-2;
+  }
+  .tiptap-editor .ProseMirror.ProseMirror-focused { @apply ring-2 ring-primary-400 rounded-lg; }
+}
+
+/* ── Exam fullscreen ─────────────────────────────────────── */
+.exam-container {
+  position: fixed; inset: 0; z-index: 9999; background: white;
+}
+
+/* ── Gradient text (Purple → Gold) ──────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 60%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Shimmer effect (Gold) ───────────────────────────────── */
+.shimmer-gold {
+  background: linear-gradient(90deg, transparent 0%, rgba(245,158,11,0.3) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* ── Glassmorphism card ──────────────────────────────────── */
+.card-glass {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 4px 16px rgba(124,58,237,0.18), 0 2px 6px rgba(124,58,237,0.10);
+}
+
+/* ── KPI card ────────────────────────────────────────────── */
+.kpi-card {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #ede9fe;
+  box-shadow: 0 1px 3px rgba(124,58,237,0.12), 0 1px 2px rgba(124,58,237,0.08);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.kpi-card:hover {
+  box-shadow: 0 4px 16px rgba(124,58,237,0.18), 0 2px 6px rgba(124,58,237,0.10);
+  transform: translateY(-2px);
+}
+
+/* ── Royal card (decorative purple) ─────────────────────── */
+.card-royal {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0 8px 32px rgba(124,58,237,0.30);
+}
+
+/* ── Marathi content ─────────────────────────────────────── */
+.marathi-text {
+  font-family: "Mukta", sans-serif;
+  line-height: 1.9;
+  font-size: 1.04em;
+}
+
+/* ── Staggered entrance for card grids / lists ───────────── */
+@keyframes staggerSlideUp {
+  from { transform: translateY(14px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.stagger-children > * {
+  opacity: 0;
+  animation: staggerSlideUp 0.3s ease-out forwards;
+}
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 40ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 80ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 120ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 160ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 200ms; }
+.stagger-children > *:nth-child(n+7) { animation-delay: 240ms; }
+
+/* ── Mobile drawer slide-in ──────────────────────────────── */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+.drawer-slide-in { animation: slideInLeft 0.22s ease-out; }
+
+/* ── Purple glow ─────────────────────────────────────────── */
+.glow-purple {
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+}
+.glow-royal {
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.30);
+}
+.glow-gold {
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.30);
+}
+
+/* ── Print styles ────────────────────────────────────────── */
+@media print {
+  body { background: white !important; color: #111 !important; font-size: 12pt; }
+  .no-print,
+  header, footer, nav,
+  .question-filters,
+  .question-palette,
+  .result-actions { display: none !important; }
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+    break-inside: avoid;
+  }
+  .print-question-body { display: block !important; }
+  .print-break-before { page-break-before: always; }
+  .result-hero { background: #6d28d9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ── Question Paper Print ──────────────────────────────────── */
+/* #qp-paper-root is portaled directly onto <body> (see QuestionPaperModal)
+   so the print isolation rule below can target it as a true direct child.
+   Keep it invisible during normal browsing — @media print turns it back on. */
+#qp-paper-root {
+  display: none;
+}
+/* Standalone (not nested in @media print) — @page only ever applies while
+   printing/print-previewing, and pinning the size here stops the browser
+   from falling back to its last-used / locale-default paper size (often
+   Letter), which would otherwise clip or misalign the A4 layout below. */
+@page {
+  size: A4;
+  margin: 14mm 12mm;
+}
+@media print {
+  body.qp-printing > *:not(#qp-paper-root) {
+    display: none !important;
+  }
+  #qp-paper-root {
+    display: block !important;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    margin: 0; padding: 0;
+  }
+  .qp-paper {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.65;
+    color: #000;
+    background: #fff;
+  }
+  /* @page margins already reserve the page border — let the content fill
+     the full printable width instead of the narrower on-screen preview width. */
+  .qp-paper-inner {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+  .qp-watermark {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 80pt;
+    font-weight: 900;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 9999;
+    letter-spacing: 0.15em;
+  }
+  .qp-wm-light  { color: rgba(124,58,237,0.06) !important; }
+  .qp-wm-medium { color: rgba(124,58,237,0.10) !important; }
+  .qp-wm-dark   { color: rgba(124,58,237,0.16) !important; }
+  .qp-question  { break-inside: avoid; page-break-inside: avoid; }
+  .qp-answer-key { page-break-before: always; break-before: page; }
+  .qp-no-print  { display: none !important; }
+}
+
+/* Marathi (Devanagari) text inside the printed question paper — Times New
+   Roman has no Devanagari glyphs, so Marathi needs the same Mukta font
+   already used for Marathi text elsewhere in the app (see .font-marathi). */
+.qp-mr {
+  font-family: "Mukta", sans-serif;
+}

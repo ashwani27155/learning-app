@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "Home",
+    "testSeries": "Test Series",
+    "studyMaterial": "Study Material",
+    "currentAffairs": "Current Affairs",
+    "leaderboard": "Leaderboard",
+    "pricing": "Pricing",
+    "login": "Login",
+    "register": "Register",
+    "dashboard": "Dashboard",
+    "logout": "Logout"
+  },
+  "home": {
+    "hero": {
+      "title": "Ace Your MPSC Exam",
+      "subtitle": "Maharashtra's Most Comprehensive Online Test Series Platform",
+      "cta": "Start for Free",
+      "stats": {
+        "students": "Students",
+        "tests": "Tests",
+        "questions": "Questions",
+        "successRate": "Success Rate"
+      }
+    }
+  },
+  "testSeries": {
+    "groupWise": "Group Wise",
+    "subjectWise": "Subject Wise",
+    "pyq": "Previous Year Questions",
+    "live": "Live Tests"
+  },
+  "exam": {
+    "timer": "Time Remaining",
+    "submit": "Submit Test",
+    "nextQuestion": "Next",
+    "prevQuestion": "Previous",
+    "markForReview": "Mark for Review",
+    "clearResponse": "Clear Response",
+    "answered": "Answered",
+    "notAnswered": "Not Answered",
+    "notVisited": "Not Visited",
+    "markedForReview": "Marked for Review"
+  },
+  "result": {
+    "yourScore": "Your Score",
+    "rank": "Rank",
+    "percentile": "Percentile",
+    "correct": "Correct",
+    "incorrect": "Incorrect",
+    "skipped": "Skipped",
+    "timeTaken": "Time Taken",
+    "subjectWise": "Subject-wise Analysis",
+    "strengths": "Strengths",
+    "weaknesses": "Weaknesses",
+    "reviewQuestions": "Review Questions"
+  },
+  "subscription": {
+    "free": "Free",
+    "basic": "Basic",
+    "premium": "Premium",
+    "elite": "Elite",
+    "upgrade": "Upgrade Plan",
+    "yourPlan": "Your Plan"
+  },
+  "common": {
+    "search": "Search",
+    "filter": "Filter",
+    "viewAll": "View All",
+    "download": "Download",
+    "share": "Share",
+    "loading": "Loading...",
+    "noData": "No data available",
+    "error": "An error occurred",
+    "tryAgain": "Try Again",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete"
+  }
+}

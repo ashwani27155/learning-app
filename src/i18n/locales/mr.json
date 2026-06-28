@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "home": "मुख्यपृष्ठ",
+    "testSeries": "परीक्षा मालिका",
+    "studyMaterial": "अभ्यास साहित्य",
+    "currentAffairs": "चालू घडामोडी",
+    "leaderboard": "गुणवत्ता यादी",
+    "pricing": "सदस्यता योजना",
+    "login": "लॉग इन",
+    "register": "नोंदणी करा",
+    "dashboard": "डॅशबोर्ड",
+    "logout": "बाहेर पडा"
+  },
+  "home": {
+    "hero": {
+      "title": "MPSC परीक्षेत यश मिळवा",
+      "subtitle": "महाराष्ट्रातील सर्वोत्तम ऑनलाइन टेस्ट सिरीज प्लॅटफॉर्म",
+      "cta": "मोफत सुरू करा",
+      "stats": {
+        "students": "विद्यार्थी",
+        "tests": "टेस्ट",
+        "questions": "प्रश्न",
+        "successRate": "यश दर"
+      }
+    }
+  },
+  "testSeries": {
+    "groupWise": "गट निहाय",
+    "subjectWise": "विषय निहाय",
+    "pyq": "मागील वर्षांचे प्रश्न",
+    "live": "लाइव्ह परीक्षा"
+  },
+  "exam": {
+    "timer": "वेळ शिल्लक",
+    "submit": "परीक्षा सुपूर्द करा",
+    "nextQuestion": "पुढील प्रश्न",
+    "prevQuestion": "मागील प्रश्न",
+    "markForReview": "पुनरावलोकनासाठी चिन्हांकित करा",
+    "clearResponse": "उत्तर रद्द करा",
+    "answered": "उत्तर दिले",
+    "notAnswered": "उत्तर दिले नाही",
+    "notVisited": "न पाहिलेले",
+    "markedForReview": "पुनरावलोकनासाठी चिन्हांकित"
+  },
+  "result": {
+    "yourScore": "तुमचा स्कोर",
+    "rank": "क्रमांक",
+    "percentile": "टक्केवारी",
+    "correct": "बरोबर",
+    "incorrect": "चुकीचे",
+    "skipped": "वगळलेले",
+    "timeTaken": "लागलेला वेळ",
+    "subjectWise": "विषय निहाय विश्लेषण",
+    "strengths": "बलस्थाने",
+    "weaknesses": "कमकुवत क्षेत्रे",
+    "reviewQuestions": "प्रश्न तपासा"
+  },
+  "subscription": {
+    "free": "मोफत",
+    "basic": "बेसिक",
+    "premium": "प्रिमियम",
+    "elite": "एलीट",
+    "upgrade": "अपग्रेड करा",
+    "yourPlan": "तुमची योजना"
+  },
+  "common": {
+    "search": "शोधा",
+    "filter": "फिल्टर",
+    "viewAll": "सर्व पहा",
+    "download": "डाउनलोड करा",
+    "share": "शेअर करा",
+    "loading": "लोड होत आहे...",
+    "noData": "डेटा उपलब्ध नाही",
+    "error": "त्रुटी आली",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "cancel": "रद्द करा",
+    "confirm": "पुष्टी करा",
+    "save": "जतन करा",
+    "edit": "बदल करा",
+    "delete": "हटवा"
+  }
+}
